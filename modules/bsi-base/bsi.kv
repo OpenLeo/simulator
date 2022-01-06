@@ -1,0 +1,139 @@
+<BSI_base>:
+  BoxLayout:
+    orientation: 'vertical'
+
+    BoxLayout:
+      orientation: 'horizontal'
+      BoxLayout:
+        orientation: 'vertical'
+        size_hint: 0.3,1
+        ToggleButton:
+          text: 'economy'
+          on_state: root.on_command('economy', self.state)
+        ToggleButton:
+          text: 'dash lights'
+          state: 'down'
+          on_state: root.on_command('dash_lights', self.state)
+        ToggleButton:
+          text: 'dark mode'
+          on_state: root.on_command('dark_mode', self.state)
+      BoxLayout:
+        orientation: 'vertical'
+        Label:
+          id: cur_lum
+          text: 'lum: 10'
+        Slider:
+          min: 0
+          max: 15
+          step: 1
+          value: 10
+          on_value: root.on_command('lum', args[1])
+      GridLayout:
+        cols: 2
+        Label:
+          text: 'power mgmt'
+        ToggleButton:
+          text: 'sleeping'
+          group: 'pow_mode'
+          allow_no_selection: False
+          on_state: root.on_command('power_mode', 0x00)
+        ToggleButton:
+          text: 'on'
+          group: 'pow_mode'
+          allow_no_selection: False
+          state: 'down'
+          on_state: root.on_command('power_mode', 0x01)
+        ToggleButton:
+          text: 'sleep'
+          group: 'pow_mode'
+          allow_no_selection: False
+          on_state: root.on_command('power_mode', 0x02)
+        ToggleButton:
+          text: 'wakeup'
+          group: 'pow_mode'
+          allow_no_selection: False
+          on_state: root.on_command('power_mode', 0x03)
+        ToggleButton:
+          text: 'com_off'
+          group: 'pow_mode'
+          allow_no_selection: False
+          on_state: root.on_command('power_mode', 0x04)
+
+    BoxLayout:
+      orientation: 'horizontal'
+      Button:
+        text: '<'
+        on_press: root.on_temp(True, -0.5)
+        size_hint: 0.2,1
+      Button:
+        text: '>'
+        on_press: root.on_temp(True, +0.5)
+        size_hint: 0.2,1
+      Slider:
+        min: -40.0
+        max: 85.0
+        step: 0.5
+        value: 20.0
+        on_value: root.on_temp(False, args[1])
+      Label:
+        id: cur_ext_temp
+        text: 'temp: 20'
+        size_hint: 0.2,1
+
+    BoxLayout:
+      orientation: 'horizontal'
+      BoxLayout:
+        orientation: 'vertical'
+        Label:
+          id: cur_rpm
+          text: 'RPM: 0'
+        Slider:
+          min: 0
+          max: 6500
+          step: 1
+          value: 0
+          on_value: root.on_val('rpm', args[1])
+      BoxLayout:
+        orientation: 'vertical'
+        Label:
+          id: cur_speed
+          text: 'Speed: 0 km/h'
+        Slider:
+          min: 0
+          max: 220
+          step: 1
+          value: 0
+          on_value: root.on_val('speed', args[1])
+      BoxLayout:
+        orientation: 'vertical'
+        Label:
+          id: cur_fuel
+          text: 'Fuel: 0%'
+        Slider:
+          min: 0
+          max: 100
+          step: 1
+          value: 0
+          on_value: root.on_val('fuel', args[1])
+      BoxLayout:
+        orientation: 'vertical'
+        Label:
+          id: cur_oil
+          text: 'Oil temp: 0 deg'
+        Slider:
+          min: 60
+          max: 160
+          step: 1
+          value: 60
+          on_value: root.on_val('oil', args[1])
+      BoxLayout:
+        orientation: 'vertical'
+        Label:
+          id: cur_coolant
+          text: 'Coolant temp: 0 deg'
+        Slider:
+          min: 60
+          max: 120
+          step: 1
+          value: 60
+          on_value: root.on_val('coolant', args[1])

@@ -1,0 +1,114 @@
+<Combine>:
+  BoxLayout:
+    orientation: 'vertical'
+
+    BoxLayout:
+      orientation: 'horizontal'
+      ToggleButton:
+        text: 'on'
+        on_state: root.options[self.text] = 1 if self.state == 'down' else 0
+        size_hint: 0.1, 1
+        state: 'down'
+      GridLayout:
+        cols: 5
+        ToggleButton:
+          text: 'airbag_pass'
+          on_state: root.options[self.text] = 1 if self.state == 'down' else 0
+        ToggleButton:
+          text: 'seatbelt'
+          on_state: root.options[self.text] = 1 if self.state == 'down' else 0
+        ToggleButton:
+          text: 'brakes'
+          on_state: root.options[self.text] = 1 if self.state == 'down' else 0
+        ToggleButton:
+          text: 'low_fuel'
+          on_state: root.options[self.text] = 1 if self.state == 'down' else 0
+        ToggleButton:
+          text: 'preheat'
+          on_state: root.options[self.text] = 1 if self.state == 'down' else 0
+        ToggleButton:
+          text: 'warn'
+          on_state: root.options[self.text] = 1 if self.state == 'down' else 0
+        ToggleButton:
+          text: 'stop'
+          on_state: root.options[self.text] = 1 if self.state == 'down' else 0
+        ToggleButton:
+          text: 'doors'
+          on_state: root.options[self.text] = 1 if self.state == 'down' else 0
+        ToggleButton:
+          text: 'esp'
+          on_state: root.options[self.text] = 1 if self.state == 'down' else 0
+        ToggleButton:
+          text: 'esp_blink'
+          on_state: root.options[self.text] = 1 if self.state == 'down' else 0
+        ToggleButton:
+          text: 'tyre'
+          on_state: root.options[self.text] = 1 if self.state == 'down' else 0
+        ToggleButton:
+          text: 'backlight'
+          on_state: root.options[self.text] = 1 if self.state == 'down' else 0
+        ToggleButton:
+          text: 'low_beam'
+          on_state: root.options[self.text] = 1 if self.state == 'down' else 0
+        ToggleButton:
+          text: 'high_beam'
+          on_state: root.options[self.text] = 1 if self.state == 'down' else 0
+        ToggleButton:
+          text: 'fog_front'
+          on_state: root.options[self.text] = 1 if self.state == 'down' else 0
+        ToggleButton:
+          text: 'fog_rear'
+          on_state: root.options[self.text] = 1 if self.state == 'down' else 0
+        ToggleButton:
+          text: 'clig_r'
+          on_state: root.options[self.text] = 1 if self.state == 'down' else 0
+        ToggleButton:
+          text: 'clig_l'
+          on_state: root.options[self.text] = 1 if self.state == 'down' else 0
+
+    BoxLayout:
+      orientation: 'horizontal'
+      GridLayout:
+        cols: 5
+        ToggleButton:
+          text: 'coolant'
+          on_state: root.options[self.text] = 1 if self.state == 'down' else 0
+        ToggleButton:
+          text: 'oil_blink'
+          on_state: root.options[self.text] = 1 if self.state == 'down' else 0
+        ToggleButton:
+          text: 'coolant_blink'
+          on_state: root.options[self.text] = 1 if self.state == 'down' else 0
+        ToggleButton:
+          text: 'oil'
+          on_state: root.options[self.text] = 1 if self.state == 'down' else 0
+        ToggleButton:
+          text: 'abs'
+          on_state: root.options[self.text] = 1 if self.state == 'down' else 0
+        ToggleButton:
+          text: 'obd'
+          on_state: root.options[self.text] = 1 if self.state == 'down' else 0
+        ToggleButton:
+          text: 'gas_water'
+          on_state: root.options[self.text] = 1 if self.state == 'down' else 0
+        ToggleButton:
+          text: 'airbag'
+          on_state: root.options[self.text] = 1 if self.state == 'down' else 0
+        ToggleButton:
+          text: 'battery'
+          on_state: root.options[self.text] = 1 if self.state == 'down' else 0
+        ToggleButton:
+          text: 'dae'
+          on_state: root.options[self.text] = 1 if self.state == 'down' else 0
+        ToggleButton:
+          text: 'eco_blink'
+          on_state: root.options[self.text] = 1 if self.state == 'down' else 0
+        ToggleButton:
+          text: 'eco'
+          on_state: root.options[self.text] = 1 if self.state == 'down' else 0
+        ToggleButton:
+          text: 'battery_blink'
+          on_state: root.options[self.text] = 1 if self.state == 'down' else 0
+        ToggleButton:
+          text: 'obd_blink'
+          on_state: root.options[self.text] = 1 if self.state == 'down' else 0

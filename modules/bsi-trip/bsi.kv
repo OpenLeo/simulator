@@ -1,0 +1,125 @@
+<BSI_trip>:
+  BoxLayout:
+    orientation: 'vertical'
+
+    BoxLayout:
+      orientation: 'horizontal'
+      GridLayout:
+        cols: 2
+        ToggleButton:
+          text: 'hide fuel'
+          on_press: root.on_inst_button('hide_fuel', self.state)
+        ToggleButton:
+          text: 'hide dist'
+          on_press: root.on_inst_button('hide_dist', self.state)
+        Button:
+          text: 'com left'
+          on_state: root.on_inst_button('com_left', self.state)
+        Button:
+          text: 'com right'
+          on_state: root.on_inst_button('com_right', self.state)
+      BoxLayout:
+        orientation: 'vertical'
+        Label:
+          id: cur_inst_fuel
+          text: 'fuel consumption: 0 l/km'
+        Slider:
+          min: 0
+          max: 30
+          step: 0.1
+          value: 0.0
+          on_value: root.on_inst_param('fuel', args[1])
+      BoxLayout:
+        orientation: 'vertical'
+        Label:
+          id: cur_inst_autonomy
+          text: 'autonomy: 0 km'
+        Slider:
+          min: 0
+          max: 2000
+          step: 1
+          value: 0
+          on_value: root.on_inst_param('autonomy', args[1])
+      BoxLayout:
+        orientation: 'vertical'
+        Label:
+          id: cur_inst_dist
+          text: 'dist to dest: 0 km'
+        Slider:
+          min: 0
+          max: 600
+          step: 1
+          value: 0
+          on_value: root.on_inst_param('dist', args[1])
+
+    BoxLayout:
+      orientation: 'horizontal'
+      BoxLayout:
+        orientation: 'vertical'
+        Label:
+          id: cur_hist0_speed
+          text: 'average speed: 0 km/h'
+        Slider:
+          min: 0
+          max: 250
+          step: 1
+          value: 0
+          on_value: root.on_hist_param(0, 'speed', args[1])
+      BoxLayout:
+        orientation: 'vertical'
+        Label:
+          id: cur_hist0_dist
+          text: 'distance: 0 km'
+        Slider:
+          min: 0
+          max: 9999
+          step: 1
+          value: 0
+          on_value: root.on_hist_param(0, 'dist', args[1])
+      BoxLayout:
+        orientation: 'vertical'
+        Label:
+          id: cur_hist0_fuel
+          text: 'average consumption: 0 l/km'
+        Slider:
+          min: 0
+          max: 30
+          step: 0.1
+          value: 0
+          on_value: root.on_hist_param(0, 'fuel', args[1])
+
+    BoxLayout:
+      orientation: 'horizontal'
+      BoxLayout:
+        orientation: 'vertical'
+        Label:
+          id: cur_hist1_speed
+          text: 'average speed: 0 km/h'
+        Slider:
+          min: 0
+          max: 250
+          step: 1
+          value: 0
+          on_value: root.on_hist_param(1, 'speed', args[1])
+      BoxLayout:
+        orientation: 'vertical'
+        Label:
+          id: cur_hist1_dist
+          text: 'distance: 0 km'
+        Slider:
+          min: 0
+          max: 9999
+          step: 1
+          value: 0
+          on_value: root.on_hist_param(1, 'dist', args[1])
+      BoxLayout:
+        orientation: 'vertical'
+        Label:
+          id: cur_hist1_fuel
+          text: 'average consumption: 0 l/km'
+        Slider:
+          min: 0
+          max: 30
+          step: 0.1
+          value: 0
+          on_value: root.on_hist_param(1, 'fuel', args[1])

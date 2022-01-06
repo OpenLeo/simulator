@@ -1,0 +1,146 @@
+<Radio_fm>:
+  BoxLayout:
+    orientation: 'vertical'
+
+    BoxLayout:
+      orientation: 'horizontal'
+      GridLayout:
+        cols: 3
+        size_hint: 0.4,1
+        ToggleButton:
+          text: '---'
+          group: 'band'
+          value: 0x00
+          state: 'down'
+          on_state: root.on_band(self.state, self.value)
+          allow_no_selection: False
+        ToggleButton:
+          text: 'FM1'
+          group: 'band'
+          value: 0x10
+          on_state: root.on_band(self.state, self.value)
+          allow_no_selection: False
+        ToggleButton:
+          text: 'FM2'
+          group: 'band'
+          value: 0x20
+          on_state: root.on_band(self.state, self.value)
+          allow_no_selection: False
+        ToggleButton:
+          text: 'FMAST'
+          group: 'band'
+          value: 0x40
+          on_state: root.on_band(self.state, self.value)
+          allow_no_selection: False
+        ToggleButton:
+          text: 'AM'
+          group: 'band'
+          value: 0x50
+          on_state: root.on_band(self.state, self.value)
+          allow_no_selection: False
+      GridLayout:
+        cols: 2
+        size_hint: 0.3,1
+        ToggleButton:
+          text: 'no'
+          group: 'mem'
+          state: 'down'
+          value: 0x00
+          on_state: root.on_toggle('mem', self.state, self.value)
+          allow_no_selection: False
+        ToggleButton:
+          text: '--'
+          group: 'mem'
+          value: 0x70
+          on_state: root.on_toggle('mem', self.state, self.value)
+          allow_no_selection: False
+        ToggleButton:
+          text: '1'
+          group: 'mem'
+          value: 0x10
+          on_state: root.on_toggle('mem', self.state, self.value)
+          allow_no_selection: False
+        ToggleButton:
+          text: '2'
+          group: 'mem'
+          value: 0x20
+          on_state: root.on_toggle('mem', self.state, self.value)
+          allow_no_selection: False
+        ToggleButton:
+          text: '3'
+          group: 'mem'
+          value: 0x30
+          on_state: root.on_toggle('mem', self.state, self.value)
+          allow_no_selection: False
+        ToggleButton:
+          text: '4'
+          group: 'mem'
+          value: 0x40
+          on_state: root.on_toggle('mem', self.state, self.value)
+          allow_no_selection: False
+        ToggleButton:
+          text: '5'
+          group: 'mem'
+          value: 0x50
+          on_state: root.on_toggle('mem', self.state, self.value)
+          allow_no_selection: False
+        ToggleButton:
+          text: '6'
+          group: 'mem'
+          value: 0x60
+          on_state: root.on_toggle('mem', self.state, self.value)
+          allow_no_selection: False
+      ToggleButton:
+        text: 'RDS'
+        size_hint: 0.2,1
+        on_state: root.on_toggle('rds', self.state)
+      ToggleButton:
+        text: 'PTY'
+        size_hint: 0.2,1
+        on_state: root.on_toggle('pty', self.state)
+      ToggleButton:
+        text: 'list'
+        size_hint: 0.2,1
+        on_state: root.on_toggle('list', self.state)
+      ToggleButton:
+        text: 'scan'
+        size_hint: 0.2,1
+        on_state: root.on_toggle('scan', self.state)
+      ToggleButton:
+        text: 'tun'
+        size_hint: 0.2,1
+        on_state: root.on_toggle('tun', self.state)
+      BoxLayout:
+        orientation: 'vertical'
+        size_hint: 0.2,1
+        ToggleButton:
+          text: 'up'
+          value: 0x01
+          group: 'tundir'
+          on_state: root.on_toggle('tundir', self.state, self.value)
+          allow_no_selection: False
+        ToggleButton:
+          text: 'down'
+          value: 0x00
+          group: 'tundir'
+          on_state: root.on_toggle('tundir', self.state, self.value)
+          state: 'down'
+          allow_no_selection: False
+
+
+	BoxLayout:
+      orientation: 'horizontal'
+      Slider:
+        #min: 50.00
+        #max: 152.30
+        #step: 0.05
+        #value: 96.5
+        min: 0
+        max: 2046
+        step: 1
+        value: 50
+        on_value: root.on_freq(args[1])
+      Label:
+        id: cur_freq
+        text: '50.00mhz'
+        size_hint: 0.17,1

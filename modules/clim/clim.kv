@@ -1,0 +1,125 @@
+<Clim>:
+  BoxLayout:
+    orientation: 'vertical'
+
+    # Options
+    BoxLayout:
+      orientation: 'horizontal'
+      ToggleButton:
+        text: 'auto'
+        on_state: root.on_option('auto', self.state)
+      ToggleButton:
+        text: 'dual'
+        on_state: root.on_option('dual', self.state)
+      ToggleButton:
+        text: 'unfrost front'
+        on_state: root.on_option('unfrost_front', self.state)
+      ToggleButton:
+        text: 'recycling'
+        on_state: root.on_option('recycle', self.state)
+      ToggleButton:
+        text: 'unfrost rear'
+        on_state: root.on_option('unfrost_rear', self.state)
+
+	BoxLayout:
+      orientation: 'horizontal'
+      BoxLayout:
+        orientation: 'vertical'
+        Button:
+          text: '+'
+          on_press: root.on_temp(0, +1)
+        Label:
+          id: cur_temp0
+          text: 'LOc'
+        Button:
+          text: '-'
+          on_press: root.on_temp(0, -1)
+      GridLayout:
+        cols: 2
+        ToggleButton:
+          text: 'Frt'
+          group: dir
+          state: 'down'
+          allow_no_selection: False
+          on_state: root.on_dir(0, 0x03)
+        ToggleButton:
+          text: 'Up'
+          group: dir
+          allow_no_selection: False
+          on_state: root.on_dir(0, 0x04)
+        ToggleButton:
+          text: 'U+D'
+          group: dir
+          allow_no_selection: False
+          on_state: root.on_dir(0, 0x06)
+        ToggleButton:
+          text: 'Dwn'
+          group: dir
+          allow_no_selection: False
+          on_state: root.on_dir(0, 0x02)
+        ToggleButton:
+          text: 'F+D'
+          group: dir
+          allow_no_selection: False
+          on_state: root.on_dir(0, 0x05)
+        ToggleButton:
+          text: 'Fst'
+          group: dir
+          allow_no_selection: False
+          on_state: root.on_dir(0, 0x01)
+      BoxLayout:
+        orientation: 'vertical'
+        Label:
+          id: cur_fan
+          value: 0
+          text: 'Fan: {}'.format(self.value)
+        Slider:
+          min: 0
+          max: 7
+          step: 1
+          value: 0
+          on_value: root.fan = cur_fan.value = int(args[1])
+      GridLayout:
+        cols: 2
+        ToggleButton:
+          text: 'Frt'
+          group: dir
+          state: 'down'
+          allow_no_selection: False
+          on_state: root.on_dir(1, 0x03)
+        ToggleButton:
+          text: 'Up'
+          group: dir
+          allow_no_selection: False
+          on_state: root.on_dir(1, 0x04)
+        ToggleButton:
+          text: 'U+D'
+          group: dir
+          allow_no_selection: False
+          on_state: root.on_dir(1, 0x06)
+        ToggleButton:
+          text: 'Dwn'
+          group: dir
+          allow_no_selection: False
+          on_state: root.on_dir(1, 0x02)
+        ToggleButton:
+          text: 'F+D'
+          group: dir
+          allow_no_selection: False
+          on_state: root.on_dir(1, 0x05)
+        ToggleButton:
+          text: 'Fst'
+          group: dir
+          allow_no_selection: False
+          on_state: root.on_dir(1, 0x01)
+      BoxLayout:
+        orientation: 'vertical'
+        Button:
+          text: '+'
+          on_press: root.on_temp(1, +1)
+        Label:
+          id: cur_temp1
+          text: 'LOc'
+        Button:
+          text: '-'
+          on_press: root.on_temp(1, -1)

@@ -1,0 +1,150 @@
+<Radio_gen>:
+  BoxLayout:
+    orientation: 'vertical'
+
+    BoxLayout:
+      orientation: 'horizontal'
+      Button:
+        text: '-'
+        on_press: root.on_volume(root.volume-1)
+        size_hint: 0.1,1
+      Button:
+        text: '+'
+        on_press: root.on_volume(root.volume+1)
+        size_hint: 0.1,1
+      Slider:
+        id: slider_vol
+        min: 0
+        max: 30
+        value: 15
+        step: 1
+        on_value: root.on_volume(args[1])
+      Label:
+        id: cur_vol
+        text: '15'
+        size_hint: 0.05,1
+      GridLayout:
+        cols: 2
+        size_hint: 0.2,1
+        Label:
+          text: 'SRC'
+        ToggleButton:
+          text: 'TUN'
+          group: input
+          state: 'down'
+          allow_no_selection: False
+          on_state: root.on_input(self.text)
+        ToggleButton:
+          text: 'CD'
+          group: input
+          allow_no_selection: False
+          on_state: root.on_input(self.text)
+        ToggleButton:
+          text: 'CDC'
+          group: input
+          allow_no_selection: False
+          on_state: root.on_input(self.text)
+        ToggleButton:
+          text: 'AUX1'
+          group: input
+          allow_no_selection: False
+          on_state: root.on_input(self.text)
+        ToggleButton:
+          text: 'AUX2'
+          group: input
+          allow_no_selection: False
+          on_state: root.on_input(self.text)
+        ToggleButton:
+          text: 'USB'
+          group: input
+          allow_no_selection: False
+          on_state: root.on_input(self.text)
+        ToggleButton:
+          text: 'BT'
+          group: input
+          allow_no_selection: False
+          on_state: root.on_input(self.text)
+
+    BoxLayout:
+      orientation: 'horizontal'
+      Button:
+        text: 'mode'
+        on_state: root.on_panel(self.text, self.state)
+      Button:
+        text: 'menu'
+        on_state: root.on_panel(self.text, self.state)
+      Label:
+        # spacer
+        size_hint: 0.1,1
+      Button:
+        text: 'left'
+        on_state: root.on_panel(self.text, self.state)
+        on_press: root.on_button(self.text)
+      BoxLayout:
+        orientation: 'vertical'
+        Button:
+          text: 'up'
+          on_state: root.on_panel(self.text, self.state)
+        Button:
+          text: 'down'
+          on_state: root.on_panel(self.text, self.state)
+      Button:
+        text: 'right'
+        on_state: root.on_panel(self.text, self.state)
+        on_press: root.on_button(self.text)
+      Label:
+        # spacer
+        size_hint: 0.1,1
+      Button:
+        text: 'esc'
+        on_state: root.on_panel(self.text, self.state)
+        on_press: root.on_button(self.text)
+      Button:
+        text: 'ok'
+        on_state: root.on_panel(self.text, self.state)
+      Label:
+        # spacer
+        size_hint: 0.1,1
+      GridLayout:
+        cols: 2
+        Button:
+          text: 'audio'
+          on_state: root.on_panel(self.text, self.state)
+          on_press: root.on_button(self.text)
+        Button:
+          text: 'trip'
+          on_state: root.on_panel(self.text, self.state)
+        Button:
+          text: 'clim'
+          on_state: root.on_panel(self.text, self.state)
+        Button:
+          text: 'tel'
+          on_state: root.on_panel(self.text, self.state)
+
+    # Audio config
+    GridLayout:
+      cols: 4
+      Label:
+        id: cur_menu
+        text: 'menu: none'
+      Label:
+        id: cur_param_ambiance
+        text: 'ambiance: none'
+      Label:
+        id: cur_param_volume
+        text: 'volume: disabled'
+      Label:
+        id: cur_param_lr-bal
+        text: 'lr-bal: 0'
+      Label:
+        id: cur_param_rf-bal
+        text: 'rf-bal: 0'
+      Label:
+        id: cur_param_loudness
+        text: 'loudness: disabled'
+      Label:
+        id: cur_param_treble
+        text: 'treble: 0'
+      Label:
+        id: cur_param_bass
+        text: 'bass: 0'

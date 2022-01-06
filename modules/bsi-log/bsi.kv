@@ -1,0 +1,33 @@
+<BSI_log>:
+  BoxLayout:
+    orientation: 'vertical'
+
+    BoxLayout:
+      orientation: 'horizontal'
+
+      BoxLayout:
+        orientation: 'horizontal'
+        Button:
+          text: '-'
+          on_press: root.on_mess(root.mess-1)
+          size_hint: 0.1,1
+        Button:
+          text: '+'
+          on_press: root.on_mess(root.mess+1)
+          size_hint: 0.1,1
+        Slider:
+          id: slider_mess
+          min: 0
+          max: 255
+          value: 0
+          step: 1
+          on_value: root.on_mess(args[1])
+        Label:
+          id: cur_mess
+          text: '0'
+          size_hint: 0.1,1
+
+      Button:
+        id: send
+        text: 'send'
+        on_release: root.show_msg(root.mess)
