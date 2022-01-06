@@ -1,4 +1,4 @@
-# Leo Simulator 2000
+# Leo Simulator 2000 (Come discuss about it on our [Discord](https://discord.gg/Up8SWTZEsZ)!)
 
 Debug tool for AEE2004 can networks
 
@@ -10,6 +10,7 @@ It is also pretty messy, be aware that bugs can, and will probably happens
 ## What is it
 
 This is a tool made to debug and reverse engineer CAN frames and ECUs. This was built to serve two purposes: sending frames to an existing ECU to check how it reacts to specific data being sent to it, and be used as a bench car simulator for custom ECUs so they can still read "data from a car" (even if the car is actually being emulated)
+The name is a joke on the tendency for peugeot to call everything "Peugeot (thing) 2000" in the late 90's, hence "Leo Simulator 2000"
 
 ## How it works
 
