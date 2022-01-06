@@ -2,6 +2,8 @@
 
 Debug tool for AEE2004 can networks
 
+![preview image](.github/preview.gif?raw=true)
+
 ## Warning
 
 This is only a debug and reverse engineering tool, it is **not designed to be used in a real car.
