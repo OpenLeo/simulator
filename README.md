@@ -2,7 +2,7 @@
 
 Debug tool for AEE2004 can networks
 
-![preview image](.github/preview.gif?raw=true)
+![preview image](.github/preview.jpg?raw=true)
 
 ## Warning
 
